@@ -18,7 +18,7 @@ export default class App extends Component {
     axios
       .get(`/api/median-prime?limit=${value}`)
       .then((response) => {
-        this.setState({ median: response.data.medianPrimes, error: null })
+        this.setState({ median: response.data.medianPrime, error: null })
       })
       .catch((error) => {
         if (error.response && error.response.data.message) {

@@ -60,6 +60,6 @@ Returns an array of size 1 or 2 containing median primes given the upper limit. 
 
 ```json
 {
-  "median": [7]
+  "medianPrime": [7]
 }
 ```

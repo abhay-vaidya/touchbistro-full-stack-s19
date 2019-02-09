@@ -14,8 +14,8 @@ app.get('/api/median-prime', (req, res) => {
   if (validationUtil.isLimitValid(limitString)) {
     const limit = parseInt(limitString, 10)
     const primeNumbers = primeUtil.getPrimeNumbers(limit)
-    const medianPrimes = primeUtil.getArrayMedian(primeNumbers)
-    res.send({ medianPrimes })
+    const medianPrime = primeUtil.getArrayMedian(primeNumbers)
+    res.send({ medianPrime })
   } else {
     res.status(400)
     res.send({ message: 'Try sending a single, valid number! No letters or special characters.' })
