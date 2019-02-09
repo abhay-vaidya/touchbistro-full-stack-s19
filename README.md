@@ -4,6 +4,8 @@
 
 Full stack application with Node.js and Express back-end and React front-end allowing user to retrieve median prime number(s) given an upper limit.
 
+![Screenshot](https://github.com/abhay-vaidya/touchbistro-full-stack-s19/blob/develop/screenshot.png)
+
 ## Setup
 
 ```bash
