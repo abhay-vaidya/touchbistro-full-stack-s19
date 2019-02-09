@@ -1,0 +1,40 @@
+.input-wrapper {
+  background: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(50, 50, 93, 0.1);
+  padding-right: 8px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  padding: 16px 18px;
+}
+
+::placeholder {
+  color: #b7c2cc;
+  font-size: 18px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  background: #12b47d;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(36, 160, 86, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: white;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0fa372;
+}
+
+input:focus {
+  outline: none;
+}
