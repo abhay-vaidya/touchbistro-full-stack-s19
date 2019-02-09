@@ -58,6 +58,10 @@ Returns an array of size 1 or 2 containing median primes given the upper limit. 
   - type: `number`
   - required: `true`
 
+**Sample Request:**
+
+`http://localhost:8080/api/median-prime?limit=10`
+
 **Sample Response:**
 
 ```json
