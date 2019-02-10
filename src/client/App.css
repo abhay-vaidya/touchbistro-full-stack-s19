@@ -19,26 +19,17 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  margin: 5px;
-}
-
-h3 {
-  font-weight: 300;
-  text-align: center;
-}
-
 form {
   flex: 1;
   margin: 1em 0;
 }
 
-.subtitle-wrapper {
-  text-align: center;
-  margin: 1em;
-  color: #91a2b0;
+.external-link {
+  color: #6772e5;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.name {
-  margin: 0;
+.external-link:hover {
+  color: #4750b8;
 }

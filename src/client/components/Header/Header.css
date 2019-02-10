@@ -1,0 +1,19 @@
+.subtitle-wrapper {
+  text-align: center;
+  margin: 1em;
+  color: #91a2b0;
+}
+
+.challenge-title {
+  margin: 5px;
+}
+
+.name {
+  margin: 0;
+}
+
+.challenge-description {
+  font-weight: 300;
+  text-align: center;
+}
+
