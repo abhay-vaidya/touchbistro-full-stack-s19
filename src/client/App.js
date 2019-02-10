@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import Header from './components/Header/Header'
 import Input from './components/Input/Input'
 import Results from './components/Results/Results'
 import ErrorBanner from './components/ErrorBanner/ErrorBanner'
+import { getMedianPrime } from './services/prime.service'
 import './App.css'
 
 export default class App extends Component {
@@ -12,21 +13,21 @@ export default class App extends Component {
     error: null
   }
 
-  getMedianPrimes = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
     const { value } = this.state
-    axios
-      .get(`/api/median-prime?limit=${value}`)
-      .then((response) => {
-        this.setState({ median: response.data.medianPrime, error: null })
-      })
-      .catch((error) => {
-        if (error.response && error.response.data.message) {
-          this.setState({ median: null, error: error.response.data.message })
-        } else {
-          this.setState({ median: null, error: 'Oops, something went wrong! Try again later.' })
-        }
-      })
+    let median = null
+    let error = null
+
+    try {
+      median = await getMedianPrime(value)
+    } catch (serviceError) {
+      error = 'Oops, something went wrong! Try again later'
+      if (serviceError.response && serviceError.response.data.message) {
+        error = serviceError.response.data.message
+      }
+    }
+    this.setState({ median, error })
   }
 
   handleInputChange = (e) => {
@@ -49,25 +50,9 @@ export default class App extends Component {
     const { value, median, error } = this.state
     return (
       <div className="app-wrapper">
-        <h1>Median Prime</h1>
-        <div className="subtitle-wrapper">
-          <h2>TouchBistro Full Stack Challenge, Summer 2019</h2>
-          <h4 className="name">Abhay Vaidya</h4>
-        </div>
-        <h3>
-          Enter an upper limit to find the median prime number(s) of the set of prime numbers less
-          than your number. This is done using the &nbsp;
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"
-          >
-            Sieve of Eratosthenes
-          </a>
-          &nbsp; algorithm!
-        </h3>
+        <Header />
         <ErrorBanner error={error} />
-        <form onSubmit={this.getMedianPrimes}>
+        <form onSubmit={this.handleSubmit}>
           <Input value={value} handleInputChange={this.handleInputChange} />
         </form>
         <Results median={median} getResultText={this.getResultText} />
