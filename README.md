@@ -34,9 +34,11 @@ The development server will run the API on `localhost:8080` and the React app on
 # Build for production
 npm run build
 
-# Start production server
+# Start production server (runs build prior to starting)
 npm start
 ```
+
+The production server will run the API on `localhost:8080/api` and the React app on `localhost:8080`.
 
 ### Tests
 

@@ -8,6 +8,8 @@ const port = 8080
 
 app.use(cors())
 
+app.use(express.static('dist'))
+
 app.get('/api/median-prime', (req, res) => {
   const limitString = req.query.limit
   if (isLimitValid(limitString)) {

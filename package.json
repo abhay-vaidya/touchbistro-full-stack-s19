@@ -4,8 +4,8 @@
   "description": "TouchBistro Full Stack Intern Challenge Summer 2019",
   "main": "src/server/index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "npm run build && node src/server/index.js",
+    "build": "webpack --mode production && babel src/server --out-dir dist_server",
+    "start": "npm run build && node dist_server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js --exec babel-node",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -32,6 +32,7 @@
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
