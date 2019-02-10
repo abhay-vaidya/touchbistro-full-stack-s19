@@ -4,14 +4,6 @@ body {
   background: #f6f9fc;
 }
 
-.app-wrapper {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
