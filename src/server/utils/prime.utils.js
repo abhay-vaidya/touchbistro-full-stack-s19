@@ -1,5 +1,5 @@
 // Given an upper limit, return list of prime numbers
-function getPrimeNumbers(limit) {
+export function getPrimeNumbers(limit) {
   const numbers = new Array(limit).fill(true)
   const primes = []
 
@@ -21,7 +21,7 @@ function getPrimeNumbers(limit) {
 }
 
 // Given ascending sorted inputArray. return median
-function getArrayMedian(inputArray) {
+export function getArrayMedian(inputArray) {
   if (inputArray === undefined || inputArray.length === 0) {
     return []
   }
@@ -36,5 +36,3 @@ function getArrayMedian(inputArray) {
     ? [inputArray[midPoint - 1], inputArray[midPoint]]
     : [inputArray[midPoint]]
 }
-
-module.exports = { getPrimeNumbers, getArrayMedian }

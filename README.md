@@ -4,6 +4,8 @@
 
 Full stack application with Node.js and Express back-end and React front-end allowing user to retrieve median prime number(s) given an upper limit.
 
+![Screenshot](https://github.com/abhay-vaidya/touchbistro-full-stack-s19/blob/develop/screenshot.png)
+
 ## Setup
 
 ```bash
@@ -32,9 +34,11 @@ The development server will run the API on `localhost:8080` and the React app on
 # Build for production
 npm run build
 
-# Start production server
+# Start production server (runs build prior to starting)
 npm start
 ```
+
+The production server will run the API on `localhost:8080/api` and the React app on `localhost:8080`.
 
 ### Tests
 
@@ -56,10 +60,14 @@ Returns an array of size 1 or 2 containing median primes given the upper limit. 
   - type: `number`
   - required: `true`
 
+**Sample Request:**
+
+`http://localhost:8080/api/median-prime?limit=10`
+
 **Sample Response:**
 
 ```json
 {
-  "median": [7]
+  "medianPrime": [7]
 }
 ```

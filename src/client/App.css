@@ -4,27 +4,10 @@ body {
   background: #f6f9fc;
 }
 
-.app-wrapper {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: 72px;
-  text-align: center;
-}
-
-h2 {
-  margin: 5px;
-}
-
-h3 {
-  font-weight: 300;
   text-align: center;
 }
 
@@ -33,12 +16,12 @@ form {
   margin: 1em 0;
 }
 
-.subtitle-wrapper {
-  text-align: center;
-  margin: 1em;
-  color: #91a2b0;
+.external-link {
+  color: #6772e5;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.name {
-  margin: 0;
+.external-link:hover {
+  color: #4750b8;
 }
